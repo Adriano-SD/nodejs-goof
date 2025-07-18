@@ -30,7 +30,7 @@ jobs:
 
 #---- SCA com Snyk ----#
   sca-snyk:
-    name: Snyk with High threshold
+    name: Snyk
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -39,7 +39,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: monitor
+          command: monitor
 
 #---- DAST com ZAP ----#
   zap_scan:
